@@ -99,7 +99,7 @@ class HobbiesController extends Controller
     public function destroy($id)
     {
         //
-         //delete category
+         //delete 
          if($hobby->delete()){
             return new hobbyResource($hobby);
         }
