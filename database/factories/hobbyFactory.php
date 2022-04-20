@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class hobbiesFactory extends Factory
+class hobbyFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,7 +19,6 @@ class hobbiesFactory extends Factory
         return [
             //
             'name'=> $this->faker->text(20),
-            'age'=> $this->faker->number(2),
             'hobby'=> $this->faker->text(15),
             'sports'=> $this->faker->text(15),
         ];

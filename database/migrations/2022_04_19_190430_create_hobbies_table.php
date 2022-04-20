@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('hobbies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('age');
             $table->string('hobby');
             $table->string('sports');
             $table->timestamps();
