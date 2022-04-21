@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 //listar todas las categorias.
-Route::get('hobbies','App\Http\Controllers\HobbiesController@index');
+Route::get('hobbiess','App\Http\Controllers\HobbiesController@index');
 
 //listar una categoria
 Route::get('hobby/{id}','App\Http\Controllers\HobbiesController@show');

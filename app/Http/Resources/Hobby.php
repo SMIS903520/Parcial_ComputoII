@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class hobbies extends JsonResource
+class Hobby extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,10 +17,10 @@ class hobbies extends JsonResource
         //return parent::toArray($request);
         return[
 
-            'id' =>$this->id,
-            'name'=>$this->name,
-            'hobby'=>$this->hobby,
-            'sports'=>$this->sports
+            'id' => $this->id,
+            'name'=> $this->name,
+            'hobby'=> $this->hobby,
+            'sports'=> $this->sports
            
         ];
     }

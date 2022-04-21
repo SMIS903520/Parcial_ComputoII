@@ -15,7 +15,7 @@ class hobbyTableSeeder extends Seeder
     public function run()
     {
         //
-        \App\Models\hobby::factory()->count(10)->create();
+        \App\Models\Hobby::factory()->count(10)->create();
        
     }
 }

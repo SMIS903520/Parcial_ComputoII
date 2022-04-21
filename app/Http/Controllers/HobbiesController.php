@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\hobby;
-use App\Http\Resources\hobbies as hobbiesResource;
+use App\Models\Hobby;
+use App\Http\Resources\Hobby as HobbyResource;
 
 class HobbiesController extends Controller
 {
@@ -16,8 +16,8 @@ class HobbiesController extends Controller
     public function index()
     {
         //
-        $hobbies = hobbies::all();
-        return hobbiesResource::collection($hobbies);
+        $hobbiess = Hobby::all();
+        return HobbyResource::collection($hobbiess);
     }
 
     /**
@@ -40,15 +40,14 @@ class HobbiesController extends Controller
     public function store(Request $request)
     {
         //
-        $hobby = $request->isMethod('put') ? hobbies::findOrFail($request->id) : new hobbies;
+        $hobby = $request->isMethod('put') ? Hobby::findOrFail($request->id) : new Hobby;
         $hobby->id = $request->input('id');
         $hobby->name = $request->input('name');
-        $hobby->age = $request->input('age');
         $hobby->hobby = $request->input('hobby');
         $hobby->sports = $request->input('sports');
 
-        if($Hobby->save()){
-            return new hobbiesResource($hobby);
+        if($hobby->save()){
+            return new HobbyResource($hobby);
         }
 
     }
@@ -62,9 +61,9 @@ class HobbiesController extends Controller
     public function show($id)
     {
         //
-        $hobby = hobbies::findOrFail($id);
+        $hobby = hobby::findOrFail($id);
         //return data category
-        return new hobbiesResource($hobby);
+        return new hobbyResource($hobby);
     }
 
     /**
@@ -98,10 +97,12 @@ class HobbiesController extends Controller
      */
     public function destroy($id)
     {
+        $hobby = Hobby::findOrFail($id);
+
         //
          //delete 
          if($hobby->delete()){
-            return new hobbiesResource($hobby);
+            return new HobbyResource($hobby);
         }
     }
 }
